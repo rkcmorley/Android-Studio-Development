@@ -5,5 +5,5 @@ Week 2
 
 Week 3
 - Contains About Me app which has a scroll view that talks about your life in Canada.
-- All of these was done with design view
+- All of these was done with design view which is basically dragging and dropping elements into the phone. Very little to no coding!
 - In design view, we assigned the properties and widgets with resource ID's. Very complex!
