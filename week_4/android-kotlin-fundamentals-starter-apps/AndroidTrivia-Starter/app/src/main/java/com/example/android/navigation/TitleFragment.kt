@@ -13,7 +13,7 @@ import com.example.android.navigation.databinding.FragmentTitleBinding
  * A simple [Fragment] subclass.
  */
 class TitleFragment : Fragment() {
-
+    // The inflate is there to reference the view on the layout
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // inflater, which is the LayoutInflater used to inflate the binding layout.
@@ -21,7 +21,7 @@ class TitleFragment : Fragment() {
         // container for the parent ViewGroup. (This parameter is optional.)
         // false for the attachToParent value.
         val binding = DataBindingUtil.inflate<FragmentTitleBinding>(inflater,
-                R.layout.fragment_title,container,false)
+                R.layout.fragment_title, container, false)
         // Return binding.root from the method, which contains the inflated view.
         return binding.root
     }
