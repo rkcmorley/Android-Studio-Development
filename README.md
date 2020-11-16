@@ -21,3 +21,9 @@ Week 5
 - View Model Factory is needed to instantiate the View Model classes, in case we have a lot of View Models with similar attributes to create.
 - We also created an event listener to end the game. 
 - The data from the Fragment classes are passed or binded into their respective View Model classes.
+
+Week 7
+- This creates the database for the app. 
+- Uses entities and queries.
+- Uses database testing.
+- Uses an interface similar to a Controller which uses CRUD and that is called DAO. It's an interface for interating with the database.
