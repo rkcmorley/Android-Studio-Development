@@ -28,6 +28,11 @@ Week 7
 - Uses database testing.
 - Uses an interface similar to a Controller which uses CRUD and that is called DAO. It's an interface for interating with the database.
 
+Week 8
+- Unfortunately, has a bunch of unrelated projects, but the main focus is the Mars Estate Project.
+- The Mars Estate Project uses REST API.
+- Uses Moshi to parse JSON, uses Coroutine to asynchronously work two different callbacks through try and catch, and it uses Retrofit to calll in REST API
+
 Week 9
 - Created Google Map
 - Created user made map, marker, cursor and pointer
