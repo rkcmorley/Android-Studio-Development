@@ -15,44 +15,36 @@
  *
  */
 
-/*
-The MarsApiService class holds the network layer for the app; that is, this is the API that your ViewModel
-will use to communicate with the web service. This is the class where you will implement the Retrofit service
-API.
-*/
-
 package com.example.android.marsrealestate.network
 
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
+import com.squareup.moshi.Moshi
+import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import kotlinx.coroutines.Deferred
 import retrofit2.Call
 import retrofit2.Retrofit
-import retrofit2.converter.scalars.ScalarsConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 
-private const val BASE_URL =
-        "https://android-kotlin-fun-mars-server.appspot.com"
+private const val BASE_URL = " https://android-kotlin-fun-mars-server.appspot.com/"
+
+private val moshi = Moshi.Builder()
+        .add(KotlinJsonAdapterFactory())
+        .build()
 
 private val retrofit = Retrofit.Builder()
-        .addConverterFactory(ScalarsConverterFactory.create())
+        .addConverterFactory(MoshiConverterFactory.create(moshi))
+        .addCallAdapterFactory(CoroutineCallAdapterFactory())
         .baseUrl(BASE_URL)
         .build()
 
-/*
-Right now the goal is to get the JSON response string from the web service, and you
-only need one method to do that: getProperties(). To tell Retrofit what this method
-should do, use a @GET annotation and specify the path, or endpoint, for that web service
-method. In this case the endpoint is called realestate. When the getProperties() method
-is invoked, Retrofit appends the endpoint realestate to the base URL (which you defined
-in the Retrofit builder), and creates a Call object. That Call object is used to start
-the request.
-*/
 interface MarsApiService {
     @GET("realestate")
     fun getProperties():
-            Call<String>
+            Deferred<List<MarsProperty>>
 }
 
 object MarsApi {
-    val retrofitService: MarsApiService by lazy {
-        retrofit.create(MarsApiService::class.java)
-    }
+    val retrofitService : MarsApiService by lazy {
+        retrofit.create(MarsApiService::class.java) }
 }
