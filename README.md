@@ -27,3 +27,7 @@ Week 7
 - Uses entities and queries.
 - Uses database testing.
 - Uses an interface similar to a Controller which uses CRUD and that is called DAO. It's an interface for interating with the database.
+
+Week 9
+- Created Google Map
+- Created user made map, marker, cursor and pointer
